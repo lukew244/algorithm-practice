@@ -16,6 +16,7 @@ class WeightedUnion
     a_root = find_root(array[a], a)
     b_root = find_root(array[b], b)
     return if a_root == b_root
+
     if size[a_root] < size[b_root]
       merge_smaller_tree(a_root, b_root)
     else
@@ -30,6 +31,7 @@ class WeightedUnion
 
   def find_root(value, index)
     while value != array[index]
+      array[index] = array[array[index]]
       value = array[index]
     end
     value
